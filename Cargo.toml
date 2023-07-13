@@ -1,0 +1,52 @@
+[package]
+name = "dcmshare"
+version = "0.1.1"
+authors = ["Thomas Fritz <thomas.fritz@gematik.de>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://gitlab.lab.gematik.de/dcmshare"
+description = "Dicom Sharing Tool"
+categories = ["Gui based"]
+keywords = ["dicom", "matrix", "s3"]
+readme = "README.md"
+
+[dependencies]
+clap = { version = "=3.2.21", features = ["derive"] }
+dicom-core = { version = "0.5.3" }
+dicom-ul = { version = "0.4.4" }
+dicom-object = { version = "0.5.4" }
+dicom-encoding = { version = "0.5.3" }
+dicom-dictionary-std = { version = "0.5.0" }
+dicom-transfer-syntax-registry = { version = "0.5.1" }
+smallvec = "1.6.1"
+snafu = "0.7.3"
+tracing = "0.1.36"
+tracing-subscriber = "0.3.15"
+microkv = "0.2.9"
+sodiumoxide = "0.2.7"
+hex="0.4.2"
+rand = "0.8.0"
+serde = "1.0"
+serde_derive = "1.0"
+sha2 = "0.9"
+digest = "0.9"
+mime = "0.3.16"
+tokio = { version = "1.28.2", features = ["macros", "rt-multi-thread"] }
+url = "2.2.2"
+matrix-sdk = "0.6.2"
+structopt = "0.3.23"
+rust-s3 = { version = "0.32.3", features = ["blocking"] }
+uuid = "1.3.3"
+iced =  { version = "0.9.0", features = ["async-std", "debug","qr_code"] }
+serde_json = "1.0"
+once_cell = "1.15"
+anyhow = "1"
+walkdir = "2.3.2"
+
+# Enable a small amount of optimization in debug mode
+[profile.dev]
+opt-level = 0
+
+# Enable high optimizations for dependencies (incl. Bevy), but not for our code:
+[profile.dev.package."*"]
+opt-level = 3
