@@ -7,9 +7,13 @@ While DVD drives are becoming increasingly rare in modern computers and laptops,
 ## Features
 
 DICOM Gateway Integration: Acts as a bridge between PACS and cloud storage
+
 Cloud Storage Support: Compatible with S3 storage solutions (e.g., AWS S3)
+
 Matrix Messenger Integration: Automated notification system for image sharing
+
 End-to-End Encryption: Secure data transmission and storage
+
 PACS Compatibility: Seamless integration with existing PACS infrastructure
 
 ## How It Works
