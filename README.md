@@ -1,16 +1,17 @@
 # PACS Matrix Gateway
 
-A matrix-protocol based solution for secure medical image sharing between healthcare facilities using cloud storage and matrix messenger integration.
+A solution for encrypted medical image exchange between healthcare facilities using cloud storage and credential exchange via matrix-protocol 
+
 ## Overview
 While DVD drives are becoming increasingly rare in modern computers and laptops, DVDs are still commonly used in clinical settings for exchanging medical imaging data between practices and clinics. This project implements a cloud-based approach to medical image sharing, leveraging the matrix messenger system instead of traditional physical media.
 
 ## Features
 
-DICOM Gateway Integration: Acts as a bridge between PACS and cloud storage
+DICOM Gateway: Acts as a bridge between PACS and cloud storage
 
-Cloud Storage Support: Compatible with S3 storage solutions (e.g., AWS S3)
+Cloud Storage: Compatible with S3 storage solutions (e.g., AWS S3)
 
-Matrix Messenger Integration: Automated notification system for image sharing
+Matrix Messenger: Automated notification system for image sharing and credential exchange
 
 End-to-End Encryption: Secure data transmission and storage
 
@@ -21,7 +22,7 @@ PACS Compatibility: Seamless integration with existing PACS infrastructure
 ### Image Reception
 
 DICOM Gateway receives imaging data from PACS via DICOM protocol
-Data is encrypted before transmission
+Data is encrypted before transmission.
 
 ### Cloud Storage
 
@@ -31,11 +32,11 @@ Secure access credentials are generated
 ### Credential exchange
 
 Gateway acts as a Matrix client. 
-Automatically notifies designated recipients (e.g., medical technical assistants)
-Access credentials are forwarded 
+Automatically notifies designated recipients
+Sends access credentials are recipient
 
 ### Data Retrieval
 
-Receiving facility's DICOM Gateway uses access credentials
-Data is located and downloaded from S3 storage
-Automatic decryption and image upload
+Receiving facility's DICOM Gateway uses access credentials to 
+locate and download image data from S3 storage, decrypt and 
+eventually upload the data to the recipients PACS system
